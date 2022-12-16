@@ -1,0 +1,101 @@
+@use 'partials' as *;
+@use 'module' as *;
+:root {
+  font-size: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $body;
+  font-family: $ff-rbt;
+  overflow-x: hidden;
+  margin: 0;
+  background-image: radial-gradient( 107.71% 179.49% at 87.4% -1.76%, rgba(0, 255, 255, 0.36) 43.23%, rgba(102, 223, 21, 0.288) 100%);
+  height: auto;
+  background-attachment: fixed;
+  background-size: cover;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+section {
+  margin-bottom: 4em;
+}
+
+a {
+  text-decoration: none;
+  color: $body;
+  letter-spacing: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+.times-modal {
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin-top: -38px;
+  margin-right: -32px;
+  background-color: rgb(187, 180, 180);
+  border-radius: 50%;
+  transition: 150ms all ease-in-out;
+  text-align: center;
+  align-self: start;
+  justify-items: end;
+  justify-self: end;
+  grid-column: 2;
+  >a {
+    letter-spacing: -1px;
+  }
+  .fas {
+    line-height: 1.8;
+    color: $charcoal;
+  }
+}
+
+.times-modal:hover {
+  transform: scale(1.5);
+  .fas {
+    line-height: 1.7;
+  }
+}
+
+.overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: linear-gradient($dark-aqua, rgba($dark-aqua, 0.5));
+}
+
+.title {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: $fw-b;
+  margin: 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+@include breakpoint(mobile-s) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+@include breakpoint(laptop) {
+  .hide-desktop {
+    display: none;
+  }
+  .hide-mobile {
+    display: inherit;
+  }
+}

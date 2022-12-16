@@ -1,0 +1,26 @@
+@use '../module' as *;
+.main-content {
+  text-align: center;
+  min-height: 100vh;
+  .headline {
+    position: absolute;
+    width: 70%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  h2 {
+    font-size: clamp(1.8rem, 2.1rem, 4rem);
+    color: $body;
+    @include breakpoint(laptop) {
+      font-size: clamp(1.8rem, 3.1rem, 4rem);
+    }
+  }
+}
+
+span {
+  color: $enphasis;
+  opacity: 1;
+}
+
+@import '_scroll-down';
